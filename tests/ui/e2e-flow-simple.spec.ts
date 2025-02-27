@@ -16,6 +16,6 @@ test('login with correct credentials and verify order creation page', async ({ p
   const loginPage = new LoginPage(page)
   await loginPage.open()
   const orderCreationPage = await loginPage.signIn(USERNAME, PASSWORD)
-  await orderCreationPage.statusButton.checkDisabled(false);
-  await orderCreationPage.nameField.checkVisible();
+  await orderCreationPage.statusButton.checkDisabled(false)
+  await orderCreationPage.nameField.checkVisible()
 })

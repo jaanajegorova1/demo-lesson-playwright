@@ -1,13 +1,13 @@
 import { Page } from '@playwright/test'
-import { Input } from "../atoms/Input";
-import {Button} from "../atoms/Button";
+import { Input } from '../atoms/Input'
+import { Button } from '../atoms/Button'
 
 export class OrderPage {
   readonly page: Page
-  readonly statusButton: Button;
-  readonly nameField: Input;
-  readonly phoneField: Input;
-  readonly commentField: Input;
+  readonly statusButton: Button
+  readonly nameField: Input
+  readonly phoneField: Input
+  readonly commentField: Input
 
   constructor(page: Page) {
     this.page = page
