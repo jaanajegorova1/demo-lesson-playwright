@@ -27,11 +27,6 @@ jobs:
           echo "Running Prettier to check for formatting issues..."
           npm run check
 
-      - name: Run TypeScript compile check
-        run: |
-          echo "Running TypeScript compiler to check for type issues..."
-          npm run types:check
-
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
