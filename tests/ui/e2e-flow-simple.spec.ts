@@ -95,7 +95,6 @@ test('TL-18-5 error message displayed when incorrect credentials used', async ({
 })
 
 test('TL-18-6 create order and search order by orderId', async ({ page }) => {
-  //login:
   const loginPage = new LoginPage(page)
   const foundPage = new OrderFoundPage(page)
   await loginPage.open()
@@ -121,6 +120,7 @@ test('TL-18-6 create order and search order by orderId', async ({ page }) => {
   await orderPage.trackingCodeInputField.click()
   await orderPage.trackingCodeInputField.pressSequentially(orderId)
   await orderPage.trackingButton.click()
+  await orderPage.statusModal.isDisabled()
   await foundPage.checkFoundOrderStatus()
   await foundPage.checkFoundTitle()
 })
