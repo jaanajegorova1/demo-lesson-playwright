@@ -10,8 +10,8 @@ export class OrderFoundPage extends BasePage {
     super(page)
     this.orderDetails = page.locator('.order-details')
     this.orderDetailsStatus = page
-      .locator('span.status-list__status')
-      .getByText('OPEN', { exact: true })
+      .locator('.status-list__status.status-list__status_active')
+      .filter({ hasText: 'OPEN' })
     this.createdOrderDescription = page.locator(
       '.status-list__description.status-list__description_active',
     )
