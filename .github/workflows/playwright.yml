@@ -13,6 +13,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: lts/*
+
       - name: Install dependencies
         run: npm ci
 
@@ -26,10 +27,15 @@ jobs:
           echo "Running Prettier to check for formatting issues..."
           npm run check
 
+      - name: Run TypeScript compile check
+        run: |
+          echo "Running TypeScript compiler to check for type issues..."
+          npm run types:check
+
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
-      - name: Run Playwright tests. e2e-flow-simple
+      - name: Run Playwright tests
         env:
           URL: ${{ secrets.URL }}
           TEST_USERNAME: ${{ secrets.TEST_USERNAME }}
