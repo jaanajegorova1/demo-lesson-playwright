@@ -4,18 +4,26 @@ import { SERVICE_URL } from '../../config/env-data'
 import { Input } from '../atoms/Input'
 import { Button } from '../atoms/Button'
 import { BasePage } from './base-page'
+import { Popup } from '../atoms/Popup'
 
 export class LoginPage extends BasePage {
   readonly url: string = SERVICE_URL
   readonly signInButton: Button
   readonly usernameField: Input
   readonly passwordField: Input
+  readonly authorizationErrorPopup: Popup
+  readonly authorizationPopupCloseButton: Button
 
   constructor(page: Page) {
     super(page)
     this.signInButton = new Button(page, '[data-name=signIn-button]')
     this.usernameField = new Input(page, '[data-name=username-input]')
     this.passwordField = new Input(page, '[data-name=password-input]')
+    this.authorizationErrorPopup = new Popup(page, '[data-name="authorizationError-popup"]')
+    this.authorizationPopupCloseButton = new Button(
+      page,
+      '[data-name="authorizationError-popup-close-button"]',
+    )
   }
 
   async open() {

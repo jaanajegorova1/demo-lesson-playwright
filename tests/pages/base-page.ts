@@ -14,14 +14,14 @@ export class BasePage {
   protected constructor(page: Page) {
     this.page = page
     this.footer = this.page.locator('.Footer')
-    this.langButtonRu = new Button(this.page, '.language__button:has-text("RU")') //poisk po tekstu vnutri etogo komponenta, :modifikator klassa, class=language__button false
-    this.langButtonEn = new Button(this.page, '.language__button:has-text("EN")') //class=language__button language__button_active
+    this.langButtonRu = new Button(this.page, '.language__button:has-text("RU")')
+    this.langButtonEn = new Button(this.page, '.language__button:has-text("EN")')
     this.privacyPolicyLink = new Link(this.page, '[href="/pdf/politics.pdf"]')
     this.cookiePolicyLink = new Link(this.page, '[href="/pdf/cookie.pdf"]')
     this.tosLink = new Link(this.page, '[href="/pdf/conditions.pdf"]')
   }
 
   async checkFooterAttached(): Promise<void> {
-    await expect(this.footer).toBeAttached() //komponent est vnutri dereva
+    await expect(this.footer).toBeAttached()
   }
 }

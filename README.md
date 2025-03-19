@@ -27,3 +27,19 @@ TEST_USERNAME=myUsername
 TEST_PASSWORD=myPassword
 URL=https://example.com
 ```
+
+#How to launch test cases:
+#test.only... + command in Terminal in debug mode, detailed mode, to see test execution step by step:
+npx playwright test -g "TL-18-6" --debug --workers=1
+npx playwright test -g "TL-18-6" --debug --workers=1 --project=chromium
+
+#test.only... + command in Terminal without debug mode, fast mode:
+npx playwright test -g "TL-18-6" --headed --workers=1  
+npx playwright test -g "TL-18-6" --headed --workers=1 --project=chromium
+
+#How to run all tests on all browsers:
+npx playwright test "e2e-flow-simple.spec.ts" --headed --workers=1
+npx playwright test "e2e-flow-simple.spec.ts" --debug --workers=1 --project=chromium
+npx playwright test "e2e-flow-simple.spec.ts" --headed --workers=1 --project=chromium
+npx playwright test "e2e-flow-simple.spec.ts" --headed --workers=1 --project=webkit
+npx playwright test "e2e-flow-simple.spec.ts" --headed --workers=1 --project=firefox
