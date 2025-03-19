@@ -20,7 +20,10 @@ export class LoginPage extends BasePage {
     this.usernameField = new Input(page, '[data-name=username-input]')
     this.passwordField = new Input(page, '[data-name=password-input]')
     this.authorizationErrorPopup = new Popup(page, '[data-name="authorizationError-popup"]')
-    this.authorizationPopupCloseButton = new Button(page, '[data-name="authorizationError-popup-close-button"]')
+    this.authorizationPopupCloseButton = new Button(
+      page,
+      '[data-name="authorizationError-popup-close-button"]',
+    )
   }
 
   async open() {
