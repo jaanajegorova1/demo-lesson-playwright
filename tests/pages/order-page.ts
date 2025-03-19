@@ -36,10 +36,7 @@ export class OrderPage extends BasePage {
     this.orderCreatedModal = new Popup(page, '[data-name="popup__container"]')
     this.popupTitle = new Popup(page, 'h3.notification-popup__text')
     this.popupTrackingCodeText = page.locator('span.notification-popup__text')
-    this.popupCloseButton = new Button(
-      page,
-      '[data-name="orderSuccessfullyCreated-popup-close-button"]',
-    )
+    this.popupCloseButton = new Button(page, '[data-name="orderSuccessfullyCreated-popup-close-button"]')
     this.popupOkButton = new Button(page, '[data-name="orderSuccessfullyCreated-popup-ok-button"]')
   }
 
