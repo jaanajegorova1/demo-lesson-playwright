@@ -9,9 +9,11 @@ export class OrderFoundPage extends BasePage {
   constructor(page: Page) {
     super(page)
     this.orderDetails = page.locator('.order-details')
-    this.orderDetailsStatus = page.locator('.status-list__status.status-list__status_active')
+    this.orderDetailsStatus = page.locator(
+      '[class="status-list__status status-list__status_active"]',
+    )
     this.createdOrderDescription = page.locator(
-      '.status-list__description.status-list__description_active',
+      '[class="status-list__description status-list__description_active"]',
     )
   }
 

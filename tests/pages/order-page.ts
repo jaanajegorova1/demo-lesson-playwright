@@ -23,7 +23,7 @@ export class OrderPage extends BasePage {
 
   constructor(page: Page) {
     super(page)
-    this.statusButton = new Button(page, '[data-name=openStatusPopup-button]')
+    this.statusButton = new Button(page, '[data-name="openStatusPopup-button"]')
     this.nameField = new Input(page, '#name')
     this.phoneField = new Input(page, '#phone')
     this.commentField = new Input(page, '#comment')
