@@ -99,7 +99,6 @@ test('TL-18-6 create order and search order by orderId', async ({ page }) => {
   const foundPage = new OrderFoundPage(page)
   await loginPage.open()
   const orderPage = await loginPage.signIn(USERNAME, PASSWORD)
-  //create order:
   await orderPage.nameField.fill(faker.internet.username())
   await orderPage.phoneField.fill(faker.phone.number())
   await orderPage.commentField.fill(faker.word.words())
@@ -113,7 +112,6 @@ test('TL-18-6 create order and search order by orderId', async ({ page }) => {
   console.log(orderId)
   await orderPage.popupOkButton.click()
   await orderPage.popupOkButton.checkDisabled(false)
-  //search order by orderId:
   await orderPage.statusButton.click()
   await orderPage.statusModal.isVisible()
   await orderPage.checkTrackingCodeTitle()
