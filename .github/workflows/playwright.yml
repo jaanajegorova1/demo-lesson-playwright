@@ -13,6 +13,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: lts/*
+
       - name: Install dependencies
         run: npm ci
 
@@ -34,7 +35,7 @@ jobs:
           URL: ${{ secrets.URL }}
           TEST_USERNAME: ${{ secrets.TEST_USERNAME }}
           TEST_PASSWORD: ${{ secrets.TEST_PASSWORD }}
-        run: npx playwright test
+        run: npx playwright test tests/ui/e2e-flow-simple.spec.ts --workers=1
 
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}

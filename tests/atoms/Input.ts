@@ -17,4 +17,14 @@ export class Input {
     await this.inputLocator.clear()
     await this.inputLocator.fill(value)
   }
+
+  async click(): Promise<void> {
+    await this.inputLocator.click()
+  }
+
+  async pressSequentially(value: string): Promise<void> {
+    console.log(value)
+    await this.inputLocator.clear()
+    await this.inputLocator.pressSequentially(value)
+  }
 }
