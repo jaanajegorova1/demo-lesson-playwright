@@ -118,6 +118,7 @@ test('TL-18-6 create order and search order by orderId', async ({ page }) => {
   await orderPage.trackingCodeInputField.click()
   await orderPage.trackingCodeInputField.pressSequentially(orderId)
   await orderPage.trackingButton.click()
+  await page.waitForTimeout(5000)
   await orderPage.statusModal.isDisabled()
   await foundPage.checkFoundOrderStatus()
   await foundPage.checkFoundTitle()
